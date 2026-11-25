@@ -1,39 +1,91 @@
-# Predictive Maintenance in RStudio — Beginner Project
+# Predictive Maintenance Using Machine Learning
 
-## What is included
-- `main.R` — the complete beginner-friendly R script.
-- `data/` — place the AI4I dataset CSV here. The script automatically downloads it from UCI the first time it runs, if it is not present.
-- `output/` — model metrics, confusion matrix, plots and saved models are written here.
+## Project Overview
+This project uses machine learning to predict machine failures based on operational and process parameters. The objective is to identify potential failures in advance and support preventive maintenance.
 
 ## Dataset
-AI4I 2020 Predictive Maintenance Dataset, UCI Machine Learning Repository.
-- 10,000 observations and 14 columns.
-- Target: `Machine failure`.
-- License: CC BY 4.0.
-- DOI: https://doi.org/10.24432/C5HS5C
-- Dataset page: https://archive.ics.uci.edu/dataset/601/ai4i
+This project uses the **AI4I 2020 Predictive Maintenance Dataset**.
 
-The dataset is downloaded by `main.R` from the official UCI archive when required. Internet access is needed for the first run. If automatic download is blocked, download `ai4i2020.csv` from the UCI dataset page and place it in the `data` folder.
+Dataset source: [AI4I 2020 Predictive Maintenance Dataset](https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset)
 
-## How to run in RStudio
-1. Extract this ZIP file to a folder on your computer.
-2. Open RStudio.
-3. Choose **File → Open File...** and open `main.R` from the extracted folder.
-4. Set the RStudio working directory to the extracted project folder:
-   **Session → Set Working Directory → To Source File Location**.
-5. Click **Source** (or run the script from top to bottom).
-6. If prompted, allow R to install the `rpart` package.
-7. When it finishes, open the `output` folder.
+Download the dataset and select the CSV file when prompted by the R script.
 
-## Models used
-- Logistic Regression — a basic statistical classification model.
-- Decision Tree — a rule-based model that is easy to visualize and explain.
+## Technologies Used
+- R
+- RStudio
+- tidyverse
+- caret
+- randomForest
+- rpart
+- recipes
+- themis
+- pROC
+- corrplot
 
-No SMOTE, recipe pipelines, or advanced tuning are used in this simplified version. The script uses a stratified 80:20 train/test split and reports accuracy, precision, recall, specificity, F1-score, and a confusion matrix.
+## Machine Learning Models
+The project trains and compares the following models:
+1. Logistic Regression
+2. Decision Tree
+3. Random Forest
+4. Random Forest with SMOTE
 
-## Important notes
-- The target `Machine failure` is converted to `Normal` and `Failure`.
-- Identifier columns (`UDI`, `Product ID`) and failure-mode labels (`TWF`, `HDF`, `PWF`, `OSF`, `RNF`) are not used as predictors.
-- The script calculates mechanical power as torque × angular speed (in radians/second).
-- Metrics are generated when you run the script; they are not pre-filled or guaranteed results.
-- Because failures are rare in this dataset, do not judge the model by accuracy alone. Pay attention to recall and the confusion matrix.
+## Project Workflow
+1. Load the dataset
+2. Perform exploratory data analysis (EDA)
+3. Preprocess the data
+4. Perform feature engineering
+5. Split the data into training and testing sets
+6. Train machine learning models
+7. Evaluate model performance
+8. Apply SMOTE to address class imbalance
+9. Compare models and generate visualizations
+
+## Evaluation Metrics
+Models are evaluated using:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+
+## Repository Structure
+```text
+Predictive-Maintenance-ML/
+├── Predictive_Maintenance_Complete_Updated_Code.R
+├── README.md
+├── Predictive_Maintenance_Project_Report.pdf
+├── visualizations/
+├── results/
+└── .gitignore
+```
+
+## How to Run
+1. Install R and RStudio.
+2. Download the AI4I 2020 dataset from the source linked above.
+3. Open the R script in RStudio.
+4. Run the script.
+5. When prompted, select the downloaded dataset CSV file.
+6. The script will create folders for data, results, and visualizations in the current working directory.
+
+## Outputs
+The script generates:
+- Exploratory data analysis plots
+- Model evaluation results
+- Model comparison tables
+- ROC and confusion matrix visualizations
+- Feature importance visualization
+- Saved model files
+
+## Results
+Add your final model comparison results here after running the complete script. Report the metrics from your latest RStudio output.
+
+## Future Enhancements
+- Build an interactive dashboard using Shiny.
+- Deploy the trained model as a web application.
+- Explore additional machine learning and deep learning approaches.
+- Integrate real-time machine sensor data.
+
+## Author
+**B. Shanmukha Reddy**  
+B.Tech – Data Science  
+Presidency University, Bengaluru
