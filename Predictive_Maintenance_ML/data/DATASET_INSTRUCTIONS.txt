@@ -1,0 +1,4 @@
+The official AI4I 2020 CSV will be downloaded automatically by main.R on first run if it is not already here.
+If you prefer manual download, get ai4i2020.csv from:
+https://archive.ics.uci.edu/dataset/601/ai4i
+Place the CSV in this data folder with the exact filename ai4i2020.csv.
